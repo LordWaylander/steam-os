@@ -19,8 +19,8 @@ echo "DESACTIVATION system read only"
 steamos-readonly disable
 #echo "installation base-devel glibc linux-api-headers"
 #pacman --sync --noconfirm --needed base-devel glibc linux-api-headers
-echo "installation libvirt qemu-base dnsmasq"
-pacman --sync --noconfirm --needed libvirt qemu-base dnsmasq
+echo "installation libvirt qemu-full dnsmasq"
+pacman --sync --noconfirm --needed --overwrite '/var/lib/glusterd/*' libvirt qemu-full dnsmasq
 
 echo "add user to libvirt group"
 usermod -aG libvirt deck
